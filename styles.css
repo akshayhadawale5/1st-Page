@@ -1,27 +1,43 @@
-body {
+/* Ensure full-screen appearance */
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Center title */
 h1 {
     text-align: center;
+    font-size: 24px;
 }
 
+/* Make input container responsive */
 .input-container {
-    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
 
+/* Style input field */
 input {
     padding: 10px;
     font-size: 16px;
-    width: 300px;
-    margin-right: 10px;
+    width: 90%;
+    margin-bottom: 10px;
 }
 
+/* Style buttons */
 button {
-    padding: 10px 15px;
+    padding: 12px;
     font-size: 16px;
+    width: 90%;
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
@@ -33,19 +49,26 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Contact list styling */
 .contact-list {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Contact item styling */
 .contact-item {
-    margin: 10px 0;
-    font-size: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
+/* Call button inside contact item */
 .contact-item button {
-    margin-left: 10px;
     padding: 5px 10px;
     cursor: pointer;
     background-color: #4CAF50;
