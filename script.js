@@ -1,3 +1,9 @@
+// Warn user before refreshing the page
+window.addEventListener("beforeunload", function (event) {
+    event.preventDefault();
+    event.returnValue = "Are you sure you want to refresh? Your call list will be lost.";
+});
+
 function makeCall(number, button) {
     // Open the dialer with the given phone number
     window.location.href = `tel:${number}`;
@@ -10,17 +16,18 @@ function makeCall(number, button) {
 
 function addNumbers() {
     const phoneNumberInput = document.getElementById("phoneNumberInput");
+    const contactList = document.getElementById("contactList");
+
     const inputText = phoneNumberInput.value.trim();
-
-    // Clear the input field after getting the value
-    phoneNumberInput.value = "";
-
     if (inputText === "") {
         alert("Please enter at least one phone number.");
         return;
     }
 
-    // Split the input by commas or spaces and clean up the numbers
+    // Clear input field
+    phoneNumberInput.value = "";
+
+    // Split input by commas or spaces and clean up numbers
     const numbers = inputText.split(/[\s,]+/).map(num => num.trim()).filter(num => num.length === 10 && /^[0-9]+$/.test(num));
 
     if (numbers.length === 0) {
@@ -28,9 +35,7 @@ function addNumbers() {
         return;
     }
 
-    // Loop through each valid number and create a call button for it
-    const contactList = document.getElementById("contactList");
-
+    // Loop through each valid number and create UI elements
     numbers.forEach(number => {
         // Create a new div to hold the phone number and call button
         const contactItem = document.createElement("div");
@@ -43,7 +48,7 @@ function addNumbers() {
         // Create the call button
         const callButton = document.createElement("button");
         callButton.textContent = "Call";
-        callButton.onclick = () => makeCall(number, callButton); // Pass button reference
+        callButton.onclick = () => makeCall(number, callButton);
 
         // Append the phone number and button to the contactItem
         contactItem.appendChild(numberSpan);
@@ -52,4 +57,7 @@ function addNumbers() {
         // Append the new contact item to the contact list
         contactList.appendChild(contactItem);
     });
+
+    // Scroll to the bottom so the latest added number is visible
+    contactList.scrollTop = contactList.scrollHeight;
 }
