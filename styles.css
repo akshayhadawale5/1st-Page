@@ -51,7 +51,7 @@ button:hover {
 
 /* Contact list styling */
 .contact-list {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,18 +63,28 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
 }
 
-/* Call button inside contact item */
+/* Adjust phone number display */
+.contact-item span {
+    flex: 1;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* Call button should take full width */
 .contact-item button {
-    padding: 5px 10px;
-    cursor: pointer;
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0;
 }
 
 .contact-item button:hover {
