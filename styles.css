@@ -29,7 +29,7 @@ h1 {
 
 /* Make input container responsive */
 .input-container {
-    width: 95%; /* Slightly wider */
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +41,7 @@ h1 {
 input {
     padding: 15px;
     font-size: 18px;
-    width: 95%; /* Wider input */
+    width: 95%;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
@@ -51,7 +51,7 @@ input {
 button {
     padding: 15px;
     font-size: 18px;
-    width: 95%; /* Full width */
+    width: 95%;
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
@@ -76,7 +76,7 @@ button:hover {
 
 /* Contact item styling */
 .contact-item {
-    width: 95%; /* Wider */
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,7 +86,14 @@ button:hover {
 }
 
 /* Adjust phone number display */
-.contact-item span {
+.contact-item .serial-number {
+    font-weight: bold;
+    font-size: 22px;
+    color: Black;
+    margin-right: 10px;
+}
+
+.contact-item .formatted-number {
     flex: 1;
     font-size: 20px;
     text-align: center;
