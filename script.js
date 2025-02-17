@@ -1,6 +1,11 @@
-function makeCall(number) {
-    // This will open the dialer with the given phone number
+function makeCall(number, button) {
+    // Open the dialer with the given phone number
     window.location.href = `tel:${number}`;
+
+    // Disable the button and change its color to gray
+    button.disabled = true;
+    button.style.backgroundColor = "#808080"; // Gray color
+    button.style.cursor = "not-allowed";
 }
 
 function addNumbers() {
@@ -38,7 +43,7 @@ function addNumbers() {
         // Create the call button
         const callButton = document.createElement("button");
         callButton.textContent = "Call";
-        callButton.onclick = () => makeCall(number);
+        callButton.onclick = () => makeCall(number, callButton); // Pass button reference
 
         // Append the phone number and button to the contactItem
         contactItem.appendChild(numberSpan);
