@@ -8,10 +8,8 @@ function makeCall(number, button) {
     // Open the dialer with the given phone number
     window.location.href = `tel:${number}`;
 
-    // Disable the button and change its color to gray
-    button.disabled = true;
+    // Change the button color to gray but keep it clickable
     button.style.backgroundColor = "#808080"; // Gray color
-    button.style.cursor = "not-allowed";
 }
 
 function addNumbers() {
