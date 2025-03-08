@@ -12,21 +12,6 @@ function makeCall(number, button) {
     button.style.backgroundColor = "#808080"; // Gray color
 }
 
-function openGoogleLens() {
-    // Try to open Google Lens via Google App (Android)
-    window.location.href = "intent://lens/#Intent;scheme=https;package=com.google.android.googlequicksearchbox;end;";
-
-    // Alternative method for some Android devices
-    setTimeout(() => {
-        window.location.href = "googleapp://lens";
-    }, 500);
-
-    // Fallback to Google Lens Web Page if app method fails
-    setTimeout(() => {
-        window.location.href = "https://lens.google.com/";
-    }, 1000);
-}
-
 function addNumbers() {
     const phoneNumberInput = document.getElementById("phoneNumberInput");
     const contactList = document.getElementById("contactList");
@@ -75,26 +60,3 @@ function addNumbers() {
         contactList.appendChild(contactItem);
     });
 }
-
-// Create header with Google Lens button
-document.addEventListener("DOMContentLoaded", function () {
-    const header = document.createElement("div");
-    header.style.backgroundColor = "#28a745"; // Green color
-    header.style.padding = "10px";
-    header.style.textAlign = "center";
-
-    const lensButton = document.createElement("button");
-    lensButton.textContent = "Open Google Lens";
-    lensButton.style.padding = "10px";
-    lensButton.style.backgroundColor = "#ffffff"; // White button
-    lensButton.style.color = "#28a745"; // Green text
-    lensButton.style.border = "none";
-    lensButton.style.cursor = "pointer";
-    lensButton.style.fontSize = "16px";
-    lensButton.style.fontWeight = "bold";
-    lensButton.style.borderRadius = "5px";
-    lensButton.onclick = openGoogleLens;
-
-    header.appendChild(lensButton);
-    document.body.insertBefore(header, document.body.firstChild);
-});
