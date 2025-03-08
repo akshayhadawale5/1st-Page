@@ -13,8 +13,18 @@ function makeCall(number, button) {
 }
 
 function openGoogleLens() {
-    // Open Google Lens app
-    window.location.href = "googleapp://lens"; // This opens Google Lens on supported devices
+    // Try to open Google Lens via Google App (Android)
+    window.location.href = "intent://lens/#Intent;scheme=https;package=com.google.android.googlequicksearchbox;end;";
+
+    // Alternative method for some Android devices
+    setTimeout(() => {
+        window.location.href = "googleapp://lens";
+    }, 500);
+
+    // Fallback to Google Lens Web Page if app method fails
+    setTimeout(() => {
+        window.location.href = "https://lens.google.com/";
+    }, 1000);
 }
 
 function addNumbers() {
