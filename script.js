@@ -12,6 +12,11 @@ function makeCall(number, button) {
     button.style.backgroundColor = "#808080"; // Gray color
 }
 
+function openGoogleLens() {
+    // Open Google Lens app
+    window.location.href = "googleapp://lens"; // This opens Google Lens on supported devices
+}
+
 function addNumbers() {
     const phoneNumberInput = document.getElementById("phoneNumberInput");
     const contactList = document.getElementById("contactList");
@@ -60,3 +65,26 @@ function addNumbers() {
         contactList.appendChild(contactItem);
     });
 }
+
+// Create header with Google Lens button
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.createElement("div");
+    header.style.backgroundColor = "#28a745"; // Green color
+    header.style.padding = "10px";
+    header.style.textAlign = "center";
+
+    const lensButton = document.createElement("button");
+    lensButton.textContent = "Open Google Lens";
+    lensButton.style.padding = "10px";
+    lensButton.style.backgroundColor = "#ffffff"; // White button
+    lensButton.style.color = "#28a745"; // Green text
+    lensButton.style.border = "none";
+    lensButton.style.cursor = "pointer";
+    lensButton.style.fontSize = "16px";
+    lensButton.style.fontWeight = "bold";
+    lensButton.style.borderRadius = "5px";
+    lensButton.onclick = openGoogleLens;
+
+    header.appendChild(lensButton);
+    document.body.insertBefore(header, document.body.firstChild);
+});
