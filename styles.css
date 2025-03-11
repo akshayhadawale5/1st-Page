@@ -27,7 +27,7 @@ h1 {
     margin: 0;
 }
 
-/* Input container styling */
+/* Make input container responsive */
 .input-container {
     width: 95%;
     display: flex;
@@ -47,11 +47,11 @@ input {
     outline: none;
 }
 
-/* Ensure 'Add Numbers' button is full width */
-.input-container button {
-    width: 95%;
+/* Style buttons */
+button {
     padding: 15px;
     font-size: 18px;
+    width: 95%;
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
@@ -60,7 +60,7 @@ input {
     margin-top: 10px;
 }
 
-.input-container button:hover {
+button:hover {
     background-color: #45a049;
 }
 
@@ -89,7 +89,7 @@ input {
 .contact-item .serial-number {
     font-weight: bold;
     font-size: 22px;
-    color: black;
+    color: Black;
     margin-right: 10px;
 }
 
@@ -99,43 +99,19 @@ input {
     text-align: center;
 }
 
-/* Wrap buttons in a container to align properly */
-.contact-buttons {
-    display: flex;
-    gap: 10px; /* Adds spacing between buttons */
-}
-
-/* Call button */
-.call-button {
-    padding: 10px;
-    font-size: 16px;
+/* Call button should take full width */
+.contact-item button {
+    flex: 1;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
     background-color: #4CAF50;
     color: white;
-    text-align: center;
     border: none;
-    border-radius: 5px;
-    min-width: 70px;
 }
 
-.call-button:hover {
+.contact-item button:hover {
     background-color: #45a049;
-}
-
-/* Plus button (Square, same height & width) */
-.plus-button {
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    font-weight: bold;
-    background-color: #2196F3;
-    color: white;
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-}
-
-.plus-button:hover {
-    background-color: #1E88E5;
 }
 
 /* Disable zooming */
