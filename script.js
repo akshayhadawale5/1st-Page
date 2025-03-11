@@ -5,8 +5,11 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 function makeCall(number, button) {
-    window.location.href = `tel:${number}`;
-    button.style.backgroundColor = "#808080"; // Gray color after clicking
+    // Open the dialer with the given phone number
+    window.location.href = tel:${number};
+
+    // Change the button color to gray but keep it clickable
+    button.style.backgroundColor = "#808080"; // Gray color
 }
 
 function addNumbers() {
@@ -41,28 +44,19 @@ function addNumbers() {
 
         const serialNumber = document.createElement("span");
         serialNumber.classList.add("serial-number");
-        serialNumber.textContent = `${index + 1}.`;
+        serialNumber.textContent = ${index + 1}.;
 
         const numberSpan = document.createElement("span");
         numberSpan.classList.add("formatted-number");
         numberSpan.textContent = formattedNumber;
 
-        // Create "Call" button
         const callButton = document.createElement("button");
         callButton.textContent = "Call";
-        callButton.classList.add("call-button");
         callButton.onclick = () => makeCall(number, callButton);
-
-        // Create "+" button
-        const plusButton = document.createElement("button");
-        plusButton.textContent = "+";
-        plusButton.classList.add("plus-button");
-        plusButton.onclick = () => alert(`Added action for ${number}`); // Placeholder action
 
         contactItem.appendChild(serialNumber);
         contactItem.appendChild(numberSpan);
         contactItem.appendChild(callButton);
-        contactItem.appendChild(plusButton);
         contactList.appendChild(contactItem);
     });
 }
