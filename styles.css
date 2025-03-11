@@ -51,10 +51,7 @@ input {
 button {
     padding: 15px;
     font-size: 18px;
-    width: 95%;
     cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
     border: none;
     border-radius: 5px;
     margin-top: 10px;
@@ -89,7 +86,7 @@ button:hover {
 .contact-item .serial-number {
     font-weight: bold;
     font-size: 22px;
-    color: Black;
+    color: black;
     margin-right: 10px;
 }
 
@@ -99,19 +96,31 @@ button:hover {
     text-align: center;
 }
 
-/* Call button should take full width */
-.contact-item button {
+/* Call button */
+.call-button {
     flex: 1;
     padding: 15px;
     font-size: 20px;
-    text-align: center;
     background-color: #4CAF50;
     color: white;
-    border: none;
+    text-align: center;
 }
 
-.contact-item button:hover {
-    background-color: #45a049;
+/* Plus button (Square, same height & width) */
+.plus-button {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #2196F3;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.plus-button:hover {
+    background-color: #1E88E5;
 }
 
 /* Disable zooming */
