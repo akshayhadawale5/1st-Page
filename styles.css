@@ -27,7 +27,7 @@ h1 {
     margin: 0;
 }
 
-/* Input container */
+/* Input container styling */
 .input-container {
     width: 95%;
     display: flex;
@@ -47,21 +47,21 @@ input {
     outline: none;
 }
 
-/* Fully clickable, full-width green Add Numbers button */
+/* Ensure 'Add Numbers' button is full width */
 .input-container button {
-    width: 100%;  /* Ensures full width */
+    width: 95%;
     padding: 15px;
     font-size: 18px;
     cursor: pointer;
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
-    text-align: center;
+    margin-top: 10px;
 }
 
 .input-container button:hover {
-    background-color: #45a049; /* Slightly darker green */
+    background-color: #45a049;
 }
 
 /* Contact list styling */
@@ -99,10 +99,10 @@ input {
     text-align: center;
 }
 
-/* Button container for Call & Plus buttons */
+/* Wrap buttons in a container to align properly */
 .contact-buttons {
     display: flex;
-    gap: 10px;
+    gap: 10px; /* Adds spacing between buttons */
 }
 
 /* Call button */
@@ -121,7 +121,7 @@ input {
     background-color: #45a049;
 }
 
-/* Plus button */
+/* Plus button (Square, same height & width) */
 .plus-button {
     width: 40px;
     height: 40px;
