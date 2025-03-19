@@ -6,10 +6,12 @@ window.addEventListener("beforeunload", function (event) {
 
 function makeCall(number, button) {
     // Open the dialer with the given phone number
-    window.location.href = tel:${number};
+    window.location.href = `tel:${number}`;
 
-    // Change the button color to gray but keep it clickable
+    // Disable the button and change its color to gray
+    button.disabled = true;
     button.style.backgroundColor = "#808080"; // Gray color
+    button.style.cursor = "not-allowed";
 }
 
 function addNumbers() {
@@ -44,7 +46,7 @@ function addNumbers() {
 
         const serialNumber = document.createElement("span");
         serialNumber.classList.add("serial-number");
-        serialNumber.textContent = ${index + 1}.;
+        serialNumber.textContent = `${index + 1}.`;
 
         const numberSpan = document.createElement("span");
         numberSpan.classList.add("formatted-number");
