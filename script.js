@@ -5,10 +5,10 @@ window.addEventListener("beforeunload", function (event) {
 });
 
 function makeCall(number, button) {
-    // Open the dialer with the given phone number
+    // Open the dialer
     window.location.href = `tel:${number}`;
 
-    // Change the button color to gray but keep it clickable
+    // Change button color to gray but keep it clickable
     button.classList.add("clicked");
 }
 
