@@ -1,132 +1,7 @@
-/* Ensure full-screen layout */
-html, body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Prevent zooming */
-body {
-    touch-action: manipulation;
-}
-
-/* Center title */
-h1 {
-    text-align: center;
-    font-size: 24px;
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 0;
-    margin: 0;
-}
-
-/* Make input container responsive */
-.input-container {
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: #f1f1f1;
-}
-
-/* Style input field */
-input {
-    padding: 15px;
-    font-size: 18px;
-    width: 95%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-/* Style buttons */
-button {
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-/* Contact list styling */
-.contact-list {
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-}
-
-/* Contact item styling */
-.contact-item {
-    width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
-    background-color: #fff;
-}
-
-/* Serial number */
-.contact-item .serial-number {
-    font-weight: bold;
-    font-size: 22px;
-    color: Black;
-    margin-right: 10px;
-}
-
-/* Phone number display */
-.contact-item .formatted-number {
-    flex: 1;
-    font-size: 20px;
-    text-align: center;
-}
-
-/* Container for buttons to align them properly */
-.contact-buttons {
-    display: flex;
-    align-items: center;
-}
-
-/* Call button */
-.call-button {
-    flex: 1;
-    padding: 15px;
-    font-size: 20px;
-    text-align: center;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px; /* Ensure equal height */
-}
-
-/* Call button remains clickable after gray-out */
-.call-button.clicked {
-    background-color: #808080; /* Gray */
-    cursor: pointer;
-}
-
-/* "+" Add Button */
+/* Style for the "+" add button */
 .add-button {
-    width: 50px; /* Square shape */
-    height: 50px; /* Same height as Call button */
+    width: 50px; /* Slightly wider for better touch */
+    height: 100%; /* Matches the Call button height */
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -135,29 +10,22 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 15px; /* Adds space between Call and Add button */
+    align-items: center;
+    margin-left: 10px; /* Adds space between Call and Add button */
 }
 
-/* Hover effect for Add button */
+/* Add hover effect */
 .add-button:hover {
     background-color: #0056b3;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-    html, body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
+/* Ensure the contact item buttons take the same height */
+.contact-item {
+    display: flex;
+    align-items: center;
+}
 
-    input {
-        font-size: 16px;
-    }
-
-    .call-button, .add-button {
-        font-size: 18px;
-    }
+.contact-item button {
+    height: 50px; /* Adjusts all buttons to the same height */
 }
