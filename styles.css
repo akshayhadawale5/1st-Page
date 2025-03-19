@@ -112,10 +112,9 @@ button:not(.add-button):hover {
 }
 
 /* "+" add button */
-/* Style for the "+" add button */
 .add-button {
-    width: 40px; /* Set fixed width */
-    height: 40px; /* Set fixed height */
+    width: 40px;
+    height: 40px;
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -123,17 +122,12 @@ button:not(.add-button):hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1 / 1; /* Ensures the button is always square */
+    margin-left: 10px;
 }
 
-/* Add hover effect */
 .add-button:hover {
     background-color: #0056b3;
 }
-
 
 /* Disable zooming */
 @media (max-width: 600px) {
