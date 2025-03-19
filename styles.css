@@ -1,6 +1,7 @@
 /* Ensure full-screen layout */
 html, body {
     height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -56,7 +57,7 @@ input {
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px; /* Smooth rounded corners */
+    border-radius: 5px;
     margin-top: 10px;
 }
 
@@ -107,7 +108,7 @@ input {
     gap: 12px; /* Space between Call & Add button */
 }
 
-/* Call button (Green, less boxy) */
+/* Call button (Green, stays clickable after gray-out) */
 .call-button {
     flex-grow: 1;
     padding: 12px 15px;
@@ -118,16 +119,17 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px; /* Consistent height */
+    height: 50px;
     min-width: 120px;
     border: none;
-    border-radius: 8px; /* Smooth rounded corners */
+    border-radius: 8px;
     transition: background-color 0.3s;
 }
 
-/* Call button remains clickable after gray-out */
+/* Call button turns gray but remains clickable */
 .call-button.clicked {
-    background-color: #808080;
+    background-color: #808080 !important;
+    color: white;
     cursor: pointer;
 }
 
@@ -145,7 +147,7 @@ input {
     color: white;
     background-color: #007BFF;
     border: none;
-    border-radius: 8px; /* Rounded edges */
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
