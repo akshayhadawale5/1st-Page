@@ -112,9 +112,10 @@ button:not(.add-button):hover {
 }
 
 /* "+" add button */
+/* Style for the "+" add button */
 .add-button {
-    width: 40px;
-    height: 40px;
+    width: 50px; /* Slightly wider for better touch */
+    height: 100%; /* Matches the Call button height */
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -122,12 +123,27 @@ button:not(.add-button):hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px; /* Adds space between Call and Add button */
 }
 
+/* Add hover effect */
 .add-button:hover {
     background-color: #0056b3;
 }
+
+/* Ensure the contact item buttons take the same height */
+.contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-item button {
+    height: 50px; /* Adjusts all buttons to the same height */
+}
+
 
 /* Disable zooming */
 @media (max-width: 600px) {
