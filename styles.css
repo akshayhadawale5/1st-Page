@@ -54,18 +54,10 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
-/* Green call and add buttons */
-button:not(.add-button) {
-    width: 95%;
-    background-color: #4CAF50;
-    color: white;
-}
-
-button:not(.add-button):hover {
-    background-color: #45a049;
+button:hover {
+    opacity: 0.8;
 }
 
 /* Contact list styling */
@@ -82,14 +74,14 @@ button:not(.add-button):hover {
 .contact-item {
     width: 95%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 15px;
     border-bottom: 1px solid #ccc;
     background-color: #fff;
 }
 
-/* Adjust phone number display */
+/* Serial number */
 .contact-item .serial-number {
     font-weight: bold;
     font-size: 22px;
@@ -97,25 +89,44 @@ button:not(.add-button):hover {
     margin-right: 10px;
 }
 
+/* Phone number display */
 .contact-item .formatted-number {
     flex: 1;
     font-size: 20px;
     text-align: center;
 }
 
+/* Container for buttons to align them properly */
+.contact-buttons {
+    display: flex;
+    align-items: center;
+}
+
 /* Call button */
-.contact-item button:not(.add-button) {
+.call-button {
     flex: 1;
     padding: 15px;
     font-size: 20px;
     text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* Ensure equal height */
 }
 
-/* "+" add button */
-/* Style for the "+" add button */
+/* Call button remains clickable after gray-out */
+.call-button.clicked {
+    background-color: #808080; /* Gray */
+    cursor: pointer;
+}
+
+/* "+" Add Button */
 .add-button {
-    width: 50px; /* Slightly wider for better touch */
-    height: 100%; /* Matches the Call button height */
+    width: 50px; /* Square shape */
+    height: 50px; /* Same height as Call button */
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -124,28 +135,17 @@ button:not(.add-button):hover {
     border-radius: 5px;
     cursor: pointer;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 10px; /* Adds space between Call and Add button */
+    justify-content: center;
+    margin-left: 15px; /* Adds space between Call and Add button */
 }
 
-/* Add hover effect */
+/* Hover effect for Add button */
 .add-button:hover {
     background-color: #0056b3;
 }
 
-/* Ensure the contact item buttons take the same height */
-.contact-item {
-    display: flex;
-    align-items: center;
-}
-
-.contact-item button {
-    height: 50px; /* Adjusts all buttons to the same height */
-}
-
-
-/* Disable zooming */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
     html, body {
         width: 100%;
@@ -155,5 +155,9 @@ button:not(.add-button):hover {
 
     input {
         font-size: 16px;
+    }
+
+    .call-button, .add-button {
+        font-size: 18px;
     }
 }
