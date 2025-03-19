@@ -8,10 +8,9 @@ function makeCall(number, button) {
     // Open the dialer with the given phone number
     window.location.href = `tel:${number}`;
 
-    // Disable the button and change its color to gray
-    button.disabled = true;
+    // Change button color to gray but keep it clickable
     button.style.backgroundColor = "#808080"; // Gray color
-    button.style.cursor = "not-allowed";
+    button.style.cursor = "pointer"; // Keep it clickable
 }
 
 function addNumbers() {
@@ -56,9 +55,17 @@ function addNumbers() {
         callButton.textContent = "Call";
         callButton.onclick = () => makeCall(number, callButton);
 
+        // Create "+" add button
+        const addButton = document.createElement("button");
+        addButton.classList.add("add-button");
+        addButton.textContent = "+";
+        addButton.onclick = () => handleAddButtonClick(number);
+
+        // Append elements
         contactItem.appendChild(serialNumber);
         contactItem.appendChild(numberSpan);
         contactItem.appendChild(callButton);
+        contactItem.appendChild(addButton);
         contactList.appendChild(contactItem);
     });
 }
